@@ -90,10 +90,3 @@ const apiCall = async (data) => {
 //     "score": "result.score",
 //     "numberOfBranch": "API call to result.branches_url and fetch the total count"
 // }
-
-
-// {
-//     headers: {
-//         'Authorization': "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",
-//     }
-// }
