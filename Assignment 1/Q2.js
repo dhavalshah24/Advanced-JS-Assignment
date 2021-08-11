@@ -19,11 +19,7 @@ const apiCall = async (data) => {
         };
 
         try {
-            await fetch(item.owner.url,{
-                headers: {
-                    'Authorization': "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",
-                }
-            }).then(res => res.json()).then((apidata) => {
+            await fetch(item.owner.url).then(res => res.json()).then((apidata) => {
                owner.name = apidata.name;
             });
         } catch {
@@ -31,11 +27,7 @@ const apiCall = async (data) => {
         }
         
         try {
-            await fetch(item.owner.followers_url,{
-                headers: {
-                    'Authorization': "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",
-                }
-            }).then(res => res.json()).then((apidata) => {
+            await fetch(item.owner.followers_url).then(res => res.json()).then((apidata) => {
                 owner.followersCount = apidata.length;
             });
         } catch {
@@ -44,11 +36,7 @@ const apiCall = async (data) => {
 
         try {
             mainurl = item.owner.following_url.split("{")[0];
-            await fetch(mainurl,{
-                headers: {
-                    'Authorization': "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",
-                }
-            }).then(res => res.json()).then((apidata) => {
+            await fetch(mainurl).then(res => res.json()).then((apidata) => {
                 owner.followingCount = apidata.length;
             });
         } catch {
@@ -58,11 +46,7 @@ const apiCall = async (data) => {
         let numberOfBranch = 0;
         try {
             mainurl = item.branches_url.split("{")[0];
-            await fetch(mainurl,{
-                headers: {
-                    'Authorization': "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",
-                }
-            }).then(res => res.json()).then((apidata) => {
+            await fetch(mainurl).then(res => res.json()).then((apidata) => {
                 numberOfBranch= apidata.length;
             });
         } catch {
